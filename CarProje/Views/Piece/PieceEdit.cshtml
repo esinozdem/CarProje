@@ -1,0 +1,41 @@
+﻿@model EntityLayer.Concrete.Piece
+@{
+    ViewData["Title"] = "PieceEdit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="card-body">
+        <form asp-controller="Piece" asp-action="PieceEdit" method="post">
+            <div asp-validation-summary="All"></div>
+            <div class="form-group row">
+                <label asp-for="PieceID" class="col-2 text-dark"><i class="fa-solid fa-bars"></i> Parça ID</label>
+                <input asp-for="PieceID" class="col-9" />
+            </div>
+            <br />
+            <div class="form-group row">
+                <label asp-for="PieceCode" class="col-2 text-dark"><i class="fa-solid fa-file-signature"></i> Parça Kodu</label>
+                <input asp-for="PieceCode" class="col-9" />
+            </div>
+            <br />
+            <div class="form-group row">
+                <label asp-for="PieceName" class="col-2 text-dark"><i class="fa-solid fa-file-signature"></i> Parça Adı</label>
+                <input asp-for="PieceName" class="col-9" />
+            </div>
+            <br />
+            <div class="form-group row">
+                <label asp-for="PiecePrice" class="col-2 text-dark"><i class="fa-solid fa-tag"></i>Parça Fiyatı</label>
+                <input asp-for="PiecePrice" class="col-9" />
+            </div>
+            <br />
+            <div class="form-group row">
+                <button class="col-md-11 btn btn-outline-dark"> Güncelle</button>
+            </div>
+        </form>
+    </div>
+
+    
+
+</div>
+

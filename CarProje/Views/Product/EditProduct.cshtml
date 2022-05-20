@@ -1,0 +1,47 @@
+﻿@model EntityLayer.Concrete.Product
+@{
+    ViewData["Title"] = "EditProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="card-body">
+        <form asp-controller="Product" asp-action="EditProduct" method="post">
+            <div asp-validation-summary="All"></div>
+            <div class="form-group row">
+                <label asp-for="ProductID" class="col-2 text-dark"><i class="fa-solid fa-bars"></i> Ürün ID</label>
+                <input asp-for="ProductID" class="col-9" />
+            </div>
+            <br />
+            <div class="form-group row">
+                <label asp-for="ProductCode" class="col-2 text-dark"><i class="fa-solid fa-file-signature"></i> Ürün Kodu</label>
+                <input asp-for="ProductCode" class="col-9" />
+            </div>
+            <br />
+            <div class="form-group row">
+                <label asp-for="ProductName" class="col-2 text-dark"><i class="fa-solid fa-file-signature"></i> Ürün Adı</label>
+                <input asp-for="ProductName" class="col-9" />
+            </div>
+            <br />
+            <div class="form-group row">
+                <label asp-for="ProductPrice" class="col-2 text-dark"><i class="fa-solid fa-tag"></i>Ürün Fiyatı</label>
+                <input asp-for="ProductPrice" class="col-9" />
+            </div>
+            <br />
+            <div class="form-group row">
+                <label asp-for="PieceID" class="col-2 text-dark"><i class="fa-solid fa-tag"></i>Yedek Parça</label>
+                <select asp-for="PieceID" asp-items="ViewBag.v2" class="col-9">
+                </select>
+
+            </div>
+            <br />
+            <div class="form-group row">
+                <button class="col-md-11 btn btn-outline-dark"> Güncelle</button>
+            </div>
+        </form>
+    </div>
+
+
+
+</div>
+

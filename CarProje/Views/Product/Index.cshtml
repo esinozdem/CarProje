@@ -1,0 +1,42 @@
+﻿@using EntityLayer.Concrete
+@model List<Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="col-11">
+    <div class="container pt-2">
+        <table class="m-0 table border-left-warning table-bordered dataTable" id="dataTable" style="overflow-y:scroll">
+            <thead>
+                <tr role="row" class="border-dark">
+                    <th class="border-bottom-warning" style="width: 67px; height:10px;" colspan="1">#</th>
+                    <th class="border-bottom-warning" style="width: 67px; height:10px;">Ürün Kodu</th>
+                    <th class="border-bottom-warning" style="width: 67px; height:10px;">Ürün Adı</th>
+                    <th class="border-bottom-warning" style="width: 67px; height:10px;">Fiyat</th>
+                    <th class="border-bottom-warning" style="width: 67px; height:10px;">Yedek Parça</th>
+                    <th class="border-bottom-warning" style="width: 67px; height:10px;">Detaylar</th>
+                    <th class="border-bottom-warning" style="width: 67px; height:10px;">Sil</th>
+
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <th>@item.ProductID</th>
+                    <td>@item.ProductCode</td>
+                    <td>@item.ProductName</td>
+                    <td>@item.ProductPrice</td>
+                    <td>@item.Piece.PieceName</td>
+                    <td><a href="/Product/EditProduct/@item.ProductID" class="btn btn-dark">Detaylar</a></td>
+                    <td><a href="/Product/DeleteProduct/@item.ProductID" class="btn btn-dark">Sil</a></td>
+                </tr>
+            }
+
+        </table>
+        <br />
+        <a href="/Product/ProductAdd/" class="col-md-12 btn btn-outline-dark">Yeni Ürün Ekle</a>
+    </div>
+    <br />
+</div>
